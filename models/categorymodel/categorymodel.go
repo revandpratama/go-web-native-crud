@@ -59,7 +59,7 @@ func Detail(id int) entities.Category {
 
 
 func Update(id int, category entities.Category) bool {
-	query, err := config.DB.Exec(`UPDATE category SET name = ?, slug = ?, updated_at = ? WHERE id = ?`, category.Name, category.Slug,  category.UpdatedAt, id)
+	query, err := config.DB.Exec(`UPDATE categories SET name = ?, slug = ?, updated_at = ? WHERE id = ?`, category.Name, category.Slug,  category.UpdatedAt, id)
 	if err != nil {
 		panic(err)
 	}
